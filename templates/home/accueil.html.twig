@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Acceuil</h1>
+
+            <h2> Les 5 derniers produits</h2>
+
+    <ul>
+        {% for produit in produitListe %}
+            <li class = "produit_card">
+                <img class = "card_img" src="/{{ produit.image }}" alt="{{ produit.nom }}">
+
+                <div class = "card_info">
+                    <p><span class ="card_nom">{{ produit.nom }}</span> (Id : {{ produit.id }})</p>
+                    <p>Description : {{ produit.description }}</p> 
+                    <p>Stock: {{ produit.stock }}</p>
+                    <a class = "button" href="{{path("produit", {id : produit.id}) }}">voir détail</a>
+                </div>
+            </li> 
+
+
+
+        {% endfor %}    
+    </ul>
+
+
+{% endblock %}

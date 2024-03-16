@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Inventaire</h1>
+
+            <h2> Liste des produits</h2>
+
+    <ul>
+        {% for produit in produitListe %}
+            <li class = "produit">
+                <img class = "img_invent" src="/{{ produit.image }}" alt="{{ produit.nom }}">
+
+                <div class = "info_produit">
+                    <p><span class ="nom_produit">{{ produit.nom }}</span> (Id : {{ produit.id }})</p>
+                    <p>Description : {{ produit.description }}</p> 
+                    <p>Stock: {{ produit.stock }}</p>
+                <a href="{{path("produit", {id : produit.id}) }}">voir detail {{ produit.nom}}</a>
+                </div>
+            </li> 
+
+
+
+        {% endfor %}    
+    </ul>
+
+
+{% endblock %}

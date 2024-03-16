@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fiche produit{% endblock %}
+
+{% block body %}
+
+	<div>
+		<h1>Fiche produit</h1>
+
+		<h2>{{ produit.nom }}</h2>
+		<div class="fiche">
+			<img class="img_fiche" src="/{{ produit.image }}" alt="{{ produit.nom }}">
+			<div class="info_fiche">
+				<p>Description : {{ produit.description }}</p>
+				<p>Stock: {{ produit.stock }}</p>
+			</div>
+		</div>
+
+    {% for comm in produit.commentaires %}
+    <div class="commentaire">
+        <p>{{comm.titre}}</p>
+        <p>{{comm.contenu}}</p>
+    </div>
+
+    {% endfor %}
+
+{{ form(form) }}
+
+
+	{% endblock %}

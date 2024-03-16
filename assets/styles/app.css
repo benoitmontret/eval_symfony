@@ -1,3 +1,55 @@
 body {
-    background-color: skyblue;
+    background-color: eee;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+header {
+    display: flex;
+}
+h1 {
+    text-align: center;
+}
+ul {
+    list-style-type:none;
+}
+.produit_card {
+    display: flex;
+    padding: 2rem;
+    border: solid 2px brown;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+    gap : 1rem;
+}
+.card_nom {
+    font-weight: bold;
+}
+.card_img {
+    width: 200px;
+    height: auto;
+}
+.button {
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 0.7em 2em;
+    color:white;
+    background-color: blue;
+}
+.button:hover {
+    background-color: green;
+}
+.img_invent{
+    width: 50px;
+    height: 50px;
+}
+
+.fiche {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+.img_fiche {
+    width: 100px;
+    height: auto;
+}
+
+.commentaire{
+    background-color: #DDD;
 }
