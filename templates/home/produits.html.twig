@@ -14,10 +14,12 @@
                 <img class = "img_invent" src="/{{ produit.image }}" alt="{{ produit.nom }}">
 
                 <div class = "info_produit">
-                    <p><span class ="nom_produit">{{ produit.nom }}</span> (Id : {{ produit.id }})</p>
-                    <p>Description : {{ produit.description }}</p> 
-                    <p>Stock: {{ produit.stock }}</p>
-                <a href="{{path("produit", {id : produit.id}) }}">voir detail {{ produit.nom}}</a>
+                    <p class ="nom_produit"><span>{{ produit.nom }}</span> (Id : {{ produit.id }})</p>
+                    <p>Description : {{ produit.description }}</p>
+                    <div class="info_bot">
+                        <p>Stock: {{ produit.stock }}</p>
+                        <a class="button" href="{{path("produit", {id : produit.id}) }}">voir detail</a>
+                    </div>
                 </div>
             </li> 
 

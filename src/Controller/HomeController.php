@@ -69,13 +69,6 @@ class HomeController extends AbstractController
 
 
 
-//Vous créerez aussi une administration contenant une page permettant de lister, ajouter, modifier ou supprimer un produit 
-
-//ainsi qu’une page permettant de lister tous les commentaires avec la
-//possibilité d’afficher un commentaire et de le supprimer.
-
-//Seuls les utilisateurs connectés seront autorisés à accéder à ces pages d’administration
-
 
 
 }

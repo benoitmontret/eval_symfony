@@ -22,7 +22,7 @@ class CommentaireType extends AbstractType
             //     'class' => Produit::class,
             //     'choice_label' => 'id',
             // ])
-            ->add('Ajouter un commentaire', SubmitType::class)
+            ->add("Ajouter", SubmitType::class)
         ;
     }
 

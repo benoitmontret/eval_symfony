@@ -1,17 +1,17 @@
 {% extends 'baseAdmin.html.twig' %}
 
-{% block title %}Inventaire{% endblock %}
+{% block title %}Commentaire{% endblock %}
 
 {% block body %}
 
 <div>
-    <h1>Inventaire</h1>
+    <h1>Commentaires</h1>
 
     <ul>
         {% for comm in commListe %}
             <li>
                 <div>
-                    <p>{{ comm.titre }} (Id : {{ comm.id }})</p>
+                    <p>{{ comm.titre }} (Id : {{ comm.id }} )</p>
                     <p>Description : {{ comm.contenu }}</p> 
                 {# <a href="{{path("comm", {id : comm.id}) }}">voir detail {{ comm.nom}}</a> #}
                 </div>

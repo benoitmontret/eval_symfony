@@ -15,10 +15,12 @@
                 <img class = "card_img" src="/{{ produit.image }}" alt="{{ produit.nom }}">
 
                 <div class = "card_info">
-                    <p><span class ="card_nom">{{ produit.nom }}</span> (Id : {{ produit.id }})</p>
+                    <p class ="card_nom">{{ produit.nom }}</p>
                     <p>Description : {{ produit.description }}</p> 
                     <p>Stock: {{ produit.stock }}</p>
-                    <a class = "button" href="{{path("produit", {id : produit.id}) }}">voir détail</a>
+                    <div class="card_bot">
+                        <a class = "button" href="{{path("produit", {id : produit.id}) }}">voir détail</a>
+                    </div>
                 </div>
             </li> 
 
