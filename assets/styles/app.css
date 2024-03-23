@@ -11,11 +11,14 @@ h1 {
 ul {
     list-style-type:none;
 }
-.admin {
-    background-color:crimson;
-}
 .admin a {
+    background-color:crimson;
     color: aliceblue;
+}
+.link-site a{
+    background-color:aliceblue;
+    color: crimson;
+
 }
 .produit_card {
     display: flex;
@@ -25,12 +28,19 @@ ul {
     margin-bottom: 1rem;
     gap : 1rem;
 }
+.card_info {
+    width: 100%;
+}
 .card_nom {
     font-weight: bold;
 }
 .card_img {
     width: 200px;
     height: auto;
+}
+.card_bot {
+    display: flex;
+    justify-content: center;
 }
 .button {
     text-decoration: none;
@@ -58,4 +68,31 @@ ul {
 
 .commentaire{
     background-color: #DDD;
+}
+.produit {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    border: solid 2px blue;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+    gap : 1rem;
+}
+.info_produit{
+    width: 100%;
+}
+.nom_produit {
+    margin: 0;
+}
+.info_bot {
+    display: flex;
+    justify-content: space-between;
+}
+.info_bot p {
+    margin: 0;
+}
+.produit .button {
+    font-size: 0.9rem;
+    padding: 0.5em 1em;
 }
