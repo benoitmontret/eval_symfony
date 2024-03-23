@@ -10,10 +10,10 @@
     <ul>
         {% for comm in commListe %}
             <li>
-                <div>
-                    <p>{{ comm.titre }} (Id : {{ comm.id }} )</p>
-                    <p>Description : {{ comm.contenu }}</p> 
-                {# <a href="{{path("comm", {id : comm.id}) }}">voir detail {{ comm.nom}}</a> #}
+                <div class="commentaire">
+                    <p>{{ comm.titre }} (Id : {{ comm.id }} ) {{ comm.contenu }}</p> 
+
+                <a href="{{path("afficherComm", {id : comm.id}) }}">voir le commentaire</a>
                 </div>
             </li> 
 

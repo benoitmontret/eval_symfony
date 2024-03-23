@@ -68,6 +68,8 @@ ul {
 
 .commentaire{
     background-color: #DDD;
+    margin: 1em;
+    padding: 2px 20px;
 }
 .produit {
     width: 80%;
@@ -95,4 +97,21 @@ ul {
 .produit .button {
     font-size: 0.9rem;
     padding: 0.5em 1em;
+}
+.card_modif {
+    display: flex;
+    justify-content: space-evenly;
+}
+.modif {
+    background-color: orangered;
+}
+.modif:hover{
+    background-color: orange;
+}
+.delete {
+    background-color: red;
+    font-size: 0.6rem;
+}
+.delete:hover{
+    background-color: orangered;
 }

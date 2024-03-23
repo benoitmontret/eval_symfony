@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Produit;
+use App\Form\ProduitType;
 use App\Entity\Commentaire;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -30,6 +32,48 @@ class AdminController extends AbstractController
             'produitListe' => $produitListe
         ]);
     }
+    #[Route('/addProduit', name: 'addProduit')]
+    public function addProduit(EntityManagerInterface $manager, Request $request): Response
+    {
+        $produit = new Produit();
+        $form = $this->createForm(ProduitType::class, $produit);
+
+        $form-> handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $produit =$form ->getData();
+            $manager->persist($produit);
+            $manager->flush();
+            return $this->redirectToRoute('inventaire');
+        }
+
+        return $this->render('admin/addProduit.html.twig', ["form"=>$form->createView()]);
+    }
+    #[Route('/editProduit/{id}', name: 'editProduit')]
+    public function editProduit(Produit $produit, EntityManagerInterface $manager, Request $request): Response
+    {
+        $form = $this->createForm(ProduitType::class, $produit);
+
+        $form-> handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $produit =$form ->getData();
+            $manager->persist($produit);
+            $manager->flush();
+            return $this->redirectToRoute('inventaire');
+        }
+
+        return $this->render('admin/editProduit.html.twig', ["form"=>$form->createView()]);
+    }
+    #[Route('/deleteProduit/{id}', name: 'deleteProduit')]
+    public function deleteProduit(Produit $produit, EntityManagerInterface $manager,):Response
+    {
+        foreach ($produit->getCommentaires() as $commentaire) {
+            $manager->remove($commentaire);
+        }
+        $manager->remove($produit);
+        $manager->flush();
+        return $this->redirectToRoute('inventaire');
+    }
+
 
     #[Route('/listCommentaire', name: 'listCommentaire')]
     public function listCommentaire(EntityManagerInterface $manager ): Response
@@ -42,9 +86,25 @@ class AdminController extends AbstractController
             'commListe' => $commListe
         ]);
     }
+
+    #[Route('/afficherComm/{id}', name: 'afficherComm')]
+    public function afficherComm(Commentaire $commentaire,EntityManagerInterface $manager): Response
+    {
+        return $this->render('admin/afficherComm.html.twig', [
+            'Commentaire' => $commentaire,
+        ]);
+    }
+
+    #[Route('/deleteCommentaire/{id}', name: 'deleteCommentaire')]
+    public function deleteCommentaire(Commentaire $commentaire, EntityManagerInterface $manager,):Response
+    {
+        $manager->remove($commentaire);
+        $manager->flush();
+        return $this->redirectToRoute('listCommentaire');
+    }
+
 }
 
-//Vous créerez aussi une administration contenant une page permettant de lister, ajouter, modifier ou supprimer un produit 
 
 //ainsi qu’une page permettant de lister tous les commentaires avec la
 //possibilité d’afficher un commentaire et de le supprimer.

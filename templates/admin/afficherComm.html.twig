@@ -1,0 +1,17 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Afficher 1 commentaire{% endblock %}
+
+{% block body %}
+
+
+    <h1>Afficher 1 commentaire</h1>
+    <div class="commentaire">
+        <p>{{Commentaire.titre}}</p>
+        <p>{{Commentaire.contenu}}</p>
+        <a class="button delete" href="{{path("deleteCommentaire", {id : Commentaire.id}) }}">Supprimer</a>
+    </div>
+        <a href="{{ path('listCommentaire') }}">retour à la liste des commentaires</a>
+
+
+{% endblock %}

@@ -16,7 +16,11 @@
                     <p><span class ="nom_produit">{{ produit.nom }}</span> (Id : {{ produit.id }})</p>
                     <p>Description : {{ produit.description }}</p> 
                     <p>Stock: {{ produit.stock }}</p>
-                {# <a href="{{path("produit", {id : produit.id}) }}">voir detail {{ produit.nom}}</a> #}
+                    <div class="card_modif">
+
+                    <a class="button modif" href="{{path("editProduit", {id : produit.id}) }}">Modifier</a>
+                    <a class="button delete" href="{{path("deleteProduit", {id : produit.id}) }}">Supprimer</a>
+                    </div>
                 </div>
             </li> 
 
