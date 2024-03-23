@@ -15,7 +15,7 @@
 		{% endblock %}
 	</head>
 	<body>
-		<header>
+		<header class="admin">
         <div>
 			<img class="logo" src="/icons/logo-noir.webp" alt="">
 			<p class="title">La grotte du Meeple</p>
@@ -23,13 +23,13 @@
 			<nav>
 				<ul >
 					<li>
-						<a href="{{ path('accueil') }}">Retour à l'accueil</a>
+						<a href="{{ path('accueil') }}">Retour à l'accueil du site</a>
 					</li>
 					<li>
-						<a href="{{ path('produits') }}">liste complete des articles</a>
+						<a href="{{ path('adminProd') }}">Inventaire des produits</a>
 					</li>
-					<li class="admin">
-						<a href="{{ path('admin')}}">page ADMIN</a>
+					<li>
+						<a href="{{ path('adminComm')}}">listing des commentaires</a>
 					</li>
 				</ul>
 			</nav>

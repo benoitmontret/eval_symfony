@@ -11,6 +11,12 @@ h1 {
 ul {
     list-style-type:none;
 }
+.admin {
+    background-color:crimson;
+}
+.admin a {
+    color: aliceblue;
+}
 .produit_card {
     display: flex;
     padding: 2rem;
