@@ -1,9 +1,11 @@
 body {
+    margin: 20px;
     background-color: eee;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 header {
     display: flex;
+    justify-content: space-between;
 }
 h1 {
     text-align: center;
@@ -11,15 +13,19 @@ h1 {
 ul {
     list-style-type:none;
 }
+.alert-success {
+    color: green;
+    font-weight: bold;
+}
+.alert-delete {
+    color: orangered;
+    font-weight: bold;
+}
 .admin a {
     background-color:crimson;
     color: aliceblue;
 }
-.link-site a{
-    background-color:aliceblue;
-    color: crimson;
 
-}
 .produit_card {
     display: flex;
     padding: 2rem;
@@ -51,6 +57,12 @@ ul {
 }
 .button:hover {
     background-color: green;
+}
+.vert {
+    background-color: green;
+}
+.vert:hover {
+    background-color: #003a00;
 }
 .img_invent{
     width: 50px;
@@ -114,4 +126,9 @@ ul {
 }
 .delete:hover{
     background-color: orangered;
+}
+.admin-nav{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
 }
