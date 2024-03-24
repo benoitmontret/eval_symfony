@@ -10,16 +10,20 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
+#[route('/admin')]
 class AdminController extends AbstractController
 {
-    #[Route('/admin', name: 'admin')]
+    #[Route('/', name: 'admin')]
     public function admin(): Response
     {
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
         ]);
     }
+
+
 
     #[Route('/inventaire', name: 'inventaire')]
     public function inventaire(EntityManagerInterface $manager ): Response

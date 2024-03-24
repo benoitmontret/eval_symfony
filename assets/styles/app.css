@@ -64,6 +64,12 @@ ul {
 .vert:hover {
     background-color: #003a00;
 }
+.register {
+    background-color: red;
+}
+.register:hover {
+    background-color: #750000;
+}
 .img_invent{
     width: 50px;
     height: 50px;
@@ -124,7 +130,7 @@ ul {
     background-color: red;
     font-size: 0.6rem;
 }
-.delete:hover{
+.delete:hover {
     background-color: orangered;
 }
 .admin-nav{
