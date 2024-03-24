@@ -55,6 +55,7 @@ class HomeController extends AbstractController
             $commentaire =$form ->getData();
             $manager->persist($commentaire);
             $manager->flush();
+            $this -> addFlash('success', 'Le commentaire à été ajouté');
             return $this->redirectToRoute('produit', ['id' => $produit->getId()]);
         }
 

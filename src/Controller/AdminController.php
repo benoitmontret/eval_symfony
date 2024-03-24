@@ -43,6 +43,7 @@ class AdminController extends AbstractController
             $produit =$form ->getData();
             $manager->persist($produit);
             $manager->flush();
+            $this -> addFlash('success', 'Le produit à été ajouté');
             return $this->redirectToRoute('inventaire');
         }
 
@@ -58,6 +59,8 @@ class AdminController extends AbstractController
             $produit =$form ->getData();
             $manager->persist($produit);
             $manager->flush();
+            $this -> addFlash('success', 'Le produit a été modifié');
+
             return $this->redirectToRoute('inventaire');
         }
 
@@ -71,6 +74,8 @@ class AdminController extends AbstractController
         }
         $manager->remove($produit);
         $manager->flush();
+        $this -> addFlash('delete', 'Le produit à été supprimé');
+
         return $this->redirectToRoute('inventaire');
     }
 
@@ -100,6 +105,8 @@ class AdminController extends AbstractController
     {
         $manager->remove($commentaire);
         $manager->flush();
+        $this -> addFlash('delete', 'Le commentaire à été supprimé');
+
         return $this->redirectToRoute('listCommentaire');
     }
 
