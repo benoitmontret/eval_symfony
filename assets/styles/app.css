@@ -54,6 +54,7 @@ ul {
     padding: 0.7em 2em;
     color:white;
     background-color: blue;
+    
 }
 .button:hover {
     background-color: green;

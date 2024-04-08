@@ -45,7 +45,7 @@ class AppFixtures extends Fixture
         $manager->persist($commentaire8);
         $commentaire9 = new Commentaire();
         $commentaire9 -> setTitre("Excellent")
-                        ->setContenu("Les parties s'enchainent et on devient rapidement addict.");
+                        ->setContenu("Les parties s’enchaînent et on devient rapidement addict.");
         $manager->persist($commentaire9);
         $commentaire10 = new Commentaire();
         $commentaire10 -> setTitre("Super")
